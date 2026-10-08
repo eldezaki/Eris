@@ -1,49 +1,144 @@
+/* ==========================================================================
+   1. CSS Custom Properties (Variables)
+   ========================================================================== */
 :root {
   --color-primary: #C82333;
   --color-primary-hover: #8B0000;
   --color-accent-gold: #D4AF37;
-  --color-bg-light: #F8F9FA;
-  --color-bg-dark: #212529;
+  --color-bg-light: #ffebd9;
+  --color-bg-dark: #292121;
   --color-text-main: #212529;
   --color-text-muted: #4A5568;
 }
 
-footer{
-    color: var(--color-text-main);
-    padding: 0px;
+/* === NEW SUFF === */
+.eris-gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
 }
-h2{
-    color: var(--color-text-main);
-}
-body{
-    background-color: var(--color-bg-light);
-    font-family: Cinzel, sans-serif;   
-    margin: 0px; 
-    padding: 0px;
-}           
-div{
-    color: var(--color-text-main);
-    background-color: var(--color-accent-gold);
-    margin: auto;
-    padding: 10px;
-}  
-ul{
-    margin: 0px;
-    padding: 0px;
-    list-style-type: none;
 
+.eris-gallery img {
+  max-width: 100%;
+  height: 300px;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+  transition: transform 0.1s ease-in-out;
 }
-li{
-    color: var(--color-primary);
-    display: inline-block;
-    margin-right: 20px;
+
+.eris-gallery img:hover {
+  transform: scale(1.1) rotate(5deg);
+  transition: transform 0.1s ease-in-out;
 }
-section{
-    display: flex;
-    flex-direction: row-reverse;
+
+.eris-gallery img:
+@media screen and (max-width: 768px) {
+  .feature-box.sales {
+    background: rgb(0, 4, 255);
+    
+  }
 }
-header{
-    background-color: var(--color-bg-dark);
-    color: white;
-    padding: 20px;
+@media screen and (max-width: 300px) {
+  .feature-box.sales {
+    background: red;
+    
+  }
+}
+
+
+/* ==========================================================================
+   2. Base / Resets
+   ========================================================================== */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--color-bg-light);
+  color: var(--color-text-main);
+  font-family: 'Cinzel', sans-serif;
+}
+
+h2 {
+  color: var(--color-text-main);
+}
+
+/* ==========================================================================
+   3. Header & Navigation (Centered ayout)
+   ========================================================================== */
+header {
+  background-color: var(--color-bg-dark);
+  padding: 15px 20px;
+}
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 35px;
+}
+
+nav li a {
+  text-decoration: none;
+  text-transform: uppercase;
+  color: #ffffff;
+  font-weight: 600;
+  letter-spacing: 1px;
+  transition: color 0.2s ease-in-out;
+}
+
+nav li a:hover {
+  color: var(--color-accent-gold);
+}
+
+/* Logo Alignment */
+nav li.logo {
+  width: 140px;
+  height: 60px;
+}
+
+nav li.logo a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  background-image: url('images/mushoku-white.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  text-indent: -9999px; /* Hide textual link off-screen */
+  overflow: hidden;
+}
+
+/* ==========================================================================
+   4. Main Content Sections
+   ========================================================================== */
+.feature-box {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.feature-box div {
+  color: var(--color-text-main);
+  background-color: var(--color-accent-gold);
+  padding: 10px 20px;
+  border-radius: 4px;
+}
+
+/* ==========================================================================
+   5. Footer
+   ========================================================================== */
+#kaki {
+  color: var(--color-text-main);
+  padding: 20px;
+  text-align: center;
 }
